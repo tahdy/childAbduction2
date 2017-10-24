@@ -1,0 +1,47 @@
+
+
+<mat-toolbar  id="fadeshow1"  class="nav" color="primary" [@scrollAnimation]="state"   >
+    <span><img src="/assets/images/logo.jpg" height=30 width=41></span>
+    <a  mat-button routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+    <a mat-button routerLink="/aboutus" routerLinkActive="active" class="nav-link"> About</a>
+    <a  mat-button routerLink="/miss" routerLinkActive="active" class="nav-link">Kidnap/Missed </a>
+    <a mat-button routerLink="/found" routerLinkActive="active" class="nav-link">found</a>
+
+    <a mat-button routerLink="/contactus" routerLinkActive="active" class="nav-link">Contact</a>
+   <span class="flex-spacer"></span>
+  <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+  <a mat-button (click)="openRegisterForm()"> Register</a>
+
+
+          </mat-toolbar>
+
+
+    <mat-toolbar  id="fadeshow2"  class="nav" color="primary" [@scrollAnimation]="state"  >
+    <span><img src="/assets/images/logo.jpg" height=30 width=41></span>
+ <span class="flex-spacer"></span>
+<mat-button-toggle value="justify" (click)="toggleCollapse()"  type="button"> 
+    <span   style="color:white" class="fa fa-bars fa-lg"></span>
+
+        </mat-button-toggle>
+
+          </mat-toolbar>
+
+
+
+
+
+    <div class="collapse show"  [@collapse]="collapse">
+
+<!-- other navbar code omitted -->
+ 
+    <a  mat-button routerLink="/home" routerLinkActive="active" class="link">Home</a>
+    <a mat-button routerLink="/aboutus" routerLinkActive="active" class="link"> About</a>
+    <a  mat-button routerLink="/miss" routerLinkActive="active" class="link">Kidnap/Missed </a>
+    <a mat-button routerLink="/found" routerLinkActive="active" class="link">found</a>
+
+    <a mat-button routerLink="/contactus" routerLinkActive="active" class="link">Contact</a>
+   
+  <a mat-button (click)="openLoginForm()" class="link"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+  <a mat-button (click)="openRegisterForm()" class="link"> Register</a>
+</div>
+

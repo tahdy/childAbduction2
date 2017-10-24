@@ -1,0 +1,126 @@
+
+<div class="cover bg-info text-center d-flex h-100 align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="display-1 text-dark">Inform Us</h1>
+          <p class="lead text-dark">First thank you for your help.
+            <br>click &nbsp;found button to add information about a child you found</p>
+          <a href="#" class="btn btn-lg btn-secondary">Found</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [hidden]="found || errMess">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+<div  *ngIf="found" class="section bg-light">
+    <div class="container-fluid ">
+
+          <h1  class="text-info">{{found.name}}</h1>
+
+    </div>
+    <div class="container-fluid ">
+
+          <img src="{{BaseURL + found.image}}"  height="300px"> </div>
+
+  </div>
+<div   *ngIf="found" class="section">
+    <div class="container-fluid " style="width: 85%;">
+          <h1 class="text-info">information about the child</h1>
+        <p class="lead">{{found.information}}</p></div></div>
+
+ <div *ngIf="found" class="py-5 section text-center">
+
+     <div  class="container" style="align-content: center;">
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="w-25" style="width:250px">#</th>
+                <th >information</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>blood type</td>
+                <td>{{found.blood}}</td>
+                
+              </tr>
+              <tr>
+                <td>special marks</td>
+                <td>{{found.marks}}</td>
+                
+              </tr>
+              <tr>
+                <td>height</td>
+                <td>{{found.height}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+  <div   *ngIf="found" [@visibility]="visibility" [@expand]
+    class="container"
+    fxLayout="column"
+    fxLayoutAlign.gt-mat="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+    <mat-list>
+      <h3 mat-line> Comments </h3>
+      <mat-list-item *ngFor="let comm of found.comments">  
+        <h4 mat-line>{{comm.comment}}
+        </h4>
+
+        <p mat-line>
+          <span> -- {{comm.author}} {{comm.date | date}}</span>
+        </p>
+      </mat-list-item>
+      <mat-list-item *ngIf="foundComment.comment && foundComment.author"> 
+        <h4 mat-line>{{foundComment.comment}}
+        </h4>
+  
+        <p mat-line>
+          <span> -- {{foundComment.author}}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+
+    <div fxFlex class="form-size">
+      <h3>Submit Your Comment</h3>
+      
+      <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-input-container class="full-width"
+            dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
+            <input matInput formControlName="author" placeholder="Your Name" type="text" required>
+            <mat-hint>
+              <span [hidden]="!(formErrors.author)">
+                {{formErrors.author}}</span>
+            </mat-hint>
+          </mat-input-container>
+        </p>
+
+        <p>
+          <mat-input-container class="full-width"
+            dividerColor="{{(formErrors.comment) ? 'warn' : 'primary'}}">
+            <textarea matInput formControlName="comment" placeholder="Your Comment" rows=5 required></textarea>
+            <mat-hint>
+              <span [hidden]="!(formErrors.comment)">
+                {{formErrors.comment}}</span>
+            </mat-hint>
+          </mat-input-container>
+        </p>
+        <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
+
+      </form>
+    </div>
+  </div>

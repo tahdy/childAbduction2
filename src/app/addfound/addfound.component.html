@@ -1,0 +1,108 @@
+<div class="cover bg-info text-center d-flex h-100 align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="display-1 text-dark">Inform Us</h1>
+                <p class="lead text-dark">First thank you for your help.
+                    <br>click &nbsp;found button to add information about a child you found</p>
+                <a routerLink="/addf" class="btn btn-lg btn-secondary">Found</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid ">
+    <h1 style="font-size: 50px">&nbsp;Add information about a child you found</h1>
+
+</div>
+
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+
+    <div fxFlex fxFlexOffset="20px" >
+
+
+
+        <form novalidate [formGroup]="addfoundForm" (ngSubmit)="onSubmit()" *ngIf="!hideform"  class="form-size container-fluid" [@expand]>
+
+
+            <p>
+                <mat-input-container class="full-width" dividerColor="{{(formErrors.name) ? 'warn' : 'primary'}}">
+                    <input matInput formControlName="name" placeholder="Name" type="text" required>
+                    <mat-hint>
+                        <span [hidden]="!(formErrors.name)">
+                  {{formErrors.name}}</span>
+                    </mat-hint>
+                </mat-input-container>
+
+            </p>
+
+            <p>
+                <mat-input-container class="full-width">
+                    <input matInput formControlName="image" placeholder="Put image url" type="url">
+
+
+                </mat-input-container>
+            </p>
+           <p>
+            <mat-input-container class="half-width" dividerColor="{{(formErrors.blood) ? 'warn' : 'primary'}}">
+                <input matInput formControlName="blood" placeholder="Blood" type="text" required>
+                <mat-hint>
+                    <span [hidden]="!(formErrors.blood)">
+                  {{formErrors.blood}}</span>
+                </mat-hint>
+            </mat-input-container>
+
+            <mat-input-container class="half-width" dividerColor="{{(formErrors.height) ? 'warn' : 'primary'}}">
+                <input matInput formControlName="height" placeholder="Height" type="text" required>
+                <mat-hint>
+                    <span [hidden]="!(formErrors.height)">
+                  {{formErrors.height}}</span>
+                </mat-hint>
+            </mat-input-container>
+            </p>
+
+            <p>
+                <mat-input-container class="full-width" dividerColor="{{(formErrors.marks) ? 'warn' : 'primary'}}">
+                    <textarea matInput formControlName="marks" placeholder="Marks" type="text" rows=6 required></textarea>
+                    <mat-hint>
+                        <span [hidden]="!(formErrors.marks)">
+                  {{formErrors.marks}}</span>
+                    </mat-hint>
+                </mat-input-container>
+
+            </p>
+
+            <p>
+                <mat-input-container class="full-width">
+                    <textarea matInput formControlName="information" placeholder="Your Information" rows=12></textarea>
+                </mat-input-container>
+            </p>
+            <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="addfoundForm.invalid">Submit</button>
+
+        </form>
+        <div *ngIf="hideform && !submitted">
+            <h4> Submitting Form </h4>
+            <mat-spinner></mat-spinner>
+
+        </div>
+
+        <div *ngIf="submitted" [@expand]>
+            <h3> Your Submission </h3>
+            <p>Name: {{submitted.name}}</p>
+            <p>Image: {{submitted.image}}</p>
+            <p>Blood: {{submitted.blood}}</p>
+            <p>Height: {{submitted.height}}</p>
+            <p>Marks: {{submitted.marks}}</p>
+            <p>Information: {{submitted.information}}</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>

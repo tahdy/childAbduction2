@@ -1,0 +1,70 @@
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+a {
+    text-decoration: none !important;
+}
+.cover {
+    @include zero-margin(110px,30px);
+    background-size: 100% 100%;
+    color:floralwhite;
+    min-height: 400px;
+    background-image: linear-gradient(rgba(0,0,0, .7), 
+                     rgba(0,0,0, .7)),
+                     url(/assets/images/miss.jpg);
+    
+    
+}
+
+
+.btn-lg, .btn-group-lg > .btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0px; }
+
+
+.btn-secondary {
+  color: #fff;
+  background-color: #222;
+  border-color: #222;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075); }
+  .btn-secondary:hover {
+    color: #fff;
+    background-color: #0f0f0f;
+    border-color: #090909; }
+  .btn-secondary:focus, .btn-secondary.focus {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(34, 34, 34, 0.5); }
+  .btn-secondary.disabled, .btn-secondary:disabled {
+    background-color: #222;
+    border-color: #222; }
+  .btn-secondary:active, .btn-secondary.active,
+  .show > .btn-secondary.dropdown-toggle {
+    background-color: #0f0f0f;
+    background-image: none;
+    border-color: #090909;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+
+.mb-4{
+    text-transform: capitalize;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 85%;
+    
+}
+
+ td {
+    padding: 8px;
+    height: 30px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th{border-bottom:2px solid #ddd;
+    padding: 8px;
+    height: 30px;
+    text-align: left;}

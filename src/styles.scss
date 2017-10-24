@@ -1,0 +1,433 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+
+
+// some basic resets 
+$lt-gray: #ddd;
+$background-dark: #4da6ff;
+$background-light: #4da6ff;
+$background-pale: #D1C4E9;
+$primary-color-dark: #4da6ff;
+$primary-color: #4da6ff;
+$primary-color-light: #99ebff;
+$primary-color-text: #FFFFFF;
+$accent-color: #FFC107;
+$primary-text-color: #212121;
+$secondary-text-color: #757575;
+$divider-color: #BDBDBD;
+
+@mixin zero-margin($pad-up-down,
+$pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.background-primary {
+    background-color: $background-dark!important;
+}
+
+.background-accent {
+    background-color: $accent-color!important;
+}
+
+.text-floral-white {
+    color: floralwhite!important;
+}
+
+.flex-spacer {
+    flex: 1 1 auto;
+}
+@media only screen and (max-width: 800px) {
+    #fadeshow1 {
+        display: none;
+    }
+
+    
+}
+
+@media only screen and (min-width: 799px) {
+    #fadeshow2 {
+        display:none;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+     font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #292b2c;
+  background-color: white;
+
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+
+.highlight {
+    background-color: $background-pale;
+    border: 1px solid $primary-color-dark;
+    z-index: 1;
+    transform: scale(1.01);
+}
+
+
+
+
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-bottom: 0.75rem;
+    font-family: Playfair Display;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+
+.py-5 {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important; 
+    text-align: center;
+    
+}
+
+section {
+  display: block;
+margin-right: auto !important;
+  margin-left: auto !important;
+width: 75% !important;}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300; }
+
+.m-3 {
+  margin: 1.5rem !important;background-color:black; }
+
+.mt-3 {
+  margin-top: 1.5rem !important; }
+
+.m-4{background-color:#17a2b8;}
+
+.mb-4 {
+  margin-bottom: 2.25rem !important; }
+.pt-5 {
+  padding-top: 4.5rem !important;  }
+.bg-primary {
+  background-color: #FF540D !important; }
+
+a.bg-primary:focus, a.bg-primary:hover {
+  background-color: #d94000 !important; }
+
+.bg-secondary {
+  background-color: #222 !important; }
+
+a.bg-secondary:focus, a.bg-secondary:hover {
+  background-color: #090909 !important; }
+
+.bg-light {
+  background-color: #f3f3f3 !important; }
+
+a.bg-light:focus, a.bg-light:hover {
+  background-color: #dadada !important; }
+
+.bg-dark {
+  background-color: #222 !important; }
+
+a.bg-dark:focus, a.bg-dark:hover {
+  background-color: #090909 !important; }
+
+.bg-info {
+  background-color: #17a2b8 !important; }
+
+a.bg-info:focus, a.bg-info:hover {
+  background-color: #117a8b !important; }
+
+.bg-success {
+  background-color: #28a745 !important; }
+
+a.bg-success:focus, a.bg-success:hover {
+  background-color: #1e7e34 !important; }
+
+.bg-warning {
+  background-color: #ffc107 !important; }
+
+a.bg-warning:focus, a.bg-warning:hover {
+  background-color: #d39e00 !important; }
+
+.bg-danger {
+  background-color: #dc3545 !important; }
+
+a.bg-danger:focus, a.bg-danger:hover {
+  background-color: #bd2130 !important; }
+
+.bg-transparent {
+  background-color: transparent !important; }
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px; 
+text-align: center;}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;text-align: center;margin: auto;margin: auto; }
+
+
+.display-1 {
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.display-2 {
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.display-3 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+small,
+.small {
+    font-size: 80%;
+    font-weight: normal;
+}
+
+mark,
+.mark {
+    padding: 0.2em;
+    background-color: #fcf8e3;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+
+
+
+.rounded-circle {
+  border-radius: 50%; }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto; }
+
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important; }
+.d-block {
+  display: block !important; }
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-info {
+  color: #17a2b8 !important; }
+
+a.text-info:focus, a.text-info:hover {
+  color: #117a8b !important; }
+
+.h-75 {
+    height: 75% !important;
+}
+
+
+
+.text-lowercase {
+  text-transform: lowercase !important; }
+
+.text-uppercase {
+  text-transform: uppercase !important; }
+
+.text-capitalize {
+  text-transform: capitalize !important; }
+
+.font-weight-normal {
+  font-weight: normal; }
+
+.font-weight-bold {
+  font-weight: bold; }
+
+.font-italic {
+  font-style: italic; }
+
+.text-white {
+  color: #fff !important; }
+
+.text-primary {
+  color: #FF540D !important; }
+
+a.text-primary:focus, a.text-primary:hover {
+  color: #d94000 !important; }
+
+.text-secondary {
+  color: #222 !important; }
+
+a.text-secondary:focus, a.text-secondary:hover {
+  color: #090909 !important; }
+
+.text-light {
+  color: #f3f3f3 !important; }
+
+a.text-light:focus, a.text-light:hover {
+  color: #dadada !important; }
+
+.text-dark {
+  color: #222 !important; }
+
+a.text-dark:focus, a.text-dark:hover {
+  color: #090909 !important; }
+
+.text-info {
+  color: #17a2b8 !important; }
+
+a.text-info:focus, a.text-info:hover {
+  color: #117a8b !important; }
+
+.text-success {
+  color: #28a745 !important; }
+
+a.text-success:focus, a.text-success:hover {
+  color: #1e7e34 !important; }
+
+.text-warning {
+  color: #ffc107 !important; }
+
+a.text-warning:focus, a.text-warning:hover {
+  color: #d39e00 !important; }
+
+.text-danger {
+  color: #dc3545 !important; }
+
+a.text-danger:focus, a.text-danger:hover {
+  color: #bd2130 !important; }
+
+.text-muted {
+  color: #ced4da !important; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
+.visible {
+  visibility: visible !important; }
+
+.invisible {
+  visibility: hidden !important; }
+
+.container {
+    margin: auto;
+    display: flex;
+      padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+
+
+
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
