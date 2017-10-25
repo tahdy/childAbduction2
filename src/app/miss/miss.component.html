@@ -26,4 +26,12 @@
                 <a >
           <img height="250"  src="{{BaseURL + miss.image}}"> 
               <h3 class="text-info mb-4" md-line>{{miss.name}}</h3>
-                 </a></p></mat-grid-tile></mat-grid-list></div></div>
+                 </a></p></mat-grid-tile></mat-grid-list></div>
+         <div [hidden]="misses || errMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+</div>

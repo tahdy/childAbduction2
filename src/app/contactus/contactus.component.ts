@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 import { flyInOut, expand } from '../animations/app.animation';
 import { FeedbackService } from '../services/feedback.service';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-contact',
@@ -52,9 +54,13 @@ export class ContactusComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: FormBuilder,public dialog: MatDialog,
                private feedbackservice: FeedbackService) {
     this.createForm();
+  }
+  
+    openRegisterForm() {
+    this.dialog.open(RegisterComponent, {width: '500px', height: '450px'});
   }
 
   ngOnInit() {

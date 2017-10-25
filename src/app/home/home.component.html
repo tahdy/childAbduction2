@@ -52,21 +52,30 @@
         
 
    
-         <div fxFlex class=" section bg-light">
-           <mat-grid-list cols="1"  rowHeight="520px">
-        <mat-grid-tile>
-                  <div class="row" id="venue">
-        <div class="col-md-2">
+        <div  *ngIf="misses" class="section bg-light" fxLayout="column">
+                 <div  class="container-fluid "> 
+ <h1 style="font-size: 50px;color: red" >&nbsp;Missing during the last hours!!</h1> 
+        
+    </div>
+    <div class="container-fluid ">
+        <mat-grid-list cols="4" rowHeight="400">
+        <mat-grid-tile  *ngFor="let miss of (misses | slice:misses.length - 4)" [routerLink]="['/missd', miss.id]" appHighlight>
 
-                      <h1 class="">&nbsp;Kidnappings/Missing Children</h1>
+           
+            <p class="lead">
+                <a >
+          <img  height="250"  src="{{BaseURL + miss.image}}" class="img-rounded"  > 
+              <h3 class="text-info mb-4" md-line>{{miss.name}}</h3>
+                 </a></p></mat-grid-tile></mat-grid-list></div></div>
+         <div [hidden]="misses || errMess">
+    <mat-progress-spinner></mat-progress-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
 
-                      <p class="lead"><a href="/">
-          <img src="https://pingendo.com/assets/photos/user_placeholder.png" class="rounded-circle img-fluid mx-auto d-block"> 
-              <h3 class="text-info mb-4">A</h3>
-                          </a></p></div></div>
-
-      
-               </mat-grid-tile></mat-grid-list></div></div>
+</div>
  
  
         
